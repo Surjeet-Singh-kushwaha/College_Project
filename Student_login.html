@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginp2.css">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2 id="wel">Login</h2>
+            <P id="mess"></P>
+            <div class="form-group1">
+                <label for="inpk">Usrername</label>
+                <input id="inpk" type="text" name="Name" placeholder=" Enter Student Id">
+            </div>
+            <div class="form-group2">
+                <label for="pas">Password</label>
+            <input id="pas" type="password" name="password" placeholder=" Enter Password">
+            <input type="checkbox" name="Show" id="showPassword"><Span>Show Password</Span>
+            
+            </div>
+            <button id="b1">Login</button>
+         
+        </div>
+    </div>
+</body>
+<script>
+    const passwordInput = document.getElementById("pas");
+  const showPasswordCheckbox = document.getElementById("showPassword");
+
+  showPasswordCheckbox.addEventListener("change", function () {
+    if (showPasswordCheckbox.checked) {
+      passwordInput.type = "text"; // Change the input type to "text" to reveal the password
+    } else {
+      passwordInput.type = "password"; // Change the input type back to "password" to hide the password
+    }
+  });
+    let buton = document.getElementById("b1");
+    buton.onclick = function () {
+        let name = document.getElementById("inpk").value;
+        console.log(name);
+        let pas = document.getElementById("pas").value;
+        console.log(pas)
+        if (name === "Rahul" && pas === "surj") {
+            document.getElementById("mess").innerHTML = "You LOgedIN ";
+            window.location.assign('form.html');
+
+        }
+        else { document.getElementById("mess").innerHTML = "Invalid id or Password";
+      
+    }
+</script>
+
+</html>
